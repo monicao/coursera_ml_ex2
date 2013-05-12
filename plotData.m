@@ -12,6 +12,30 @@ figure; hold on;
 %               examples and 'ko' for the negative examples.
 %
 
+% xp = [];
+% xn = [];
+
+% for i = 1:length(y)
+%   if y(i) == 0
+%     xn = [xn; X(i, :)];
+%   elseif y(i) == 1
+%     xp = [xp; X(i, :)];
+%   else
+%     fprintf('There was an error in the dataset. y value is %f\n', y(i));
+%   endif
+% endfor
+
+% plot(xp(:, 1), xp(:, 2), "k+");
+% plot(xn(:, 1), xn(:, 2), "ko");
+
+
+% Find Indices of Positive and Negative Examples
+pos = find(y==1); neg = find(y == 0);
+% Plot Examples
+plot(X(pos, 1), X(pos, 2), 'k+','LineWidth', 2, ...
+     'MarkerSize', 7);
+plot(X(neg, 1), X(neg, 2), 'ko', 'MarkerFaceColor', 'y', ...
+     'MarkerSize', 7);
 
 
 
